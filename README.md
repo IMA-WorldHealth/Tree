@@ -1,7 +1,7 @@
 # Tree
 
 [![Build Status](https://travis-ci.org/IMA-WorldHealth/Tree.svg?branch=master)](https://travis-ci.org/IMA-WorldHealth/Tree)
-[![Coverage Status](https://coveralls.io/repos/github/IMA-WorldHealth/Tree/badge.svg?branch=master)](https://coveralls.io/github/IMA-WorldHealth/Tree?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/IMA-WorldHealth/Tree/badge.svg?branch=master)](https://coveralls.io/github/IMA-WorldHealth/Tree?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/IMA-WorldHealth/Tree.svg)](https://greenkeeper.io/)
 
 This module provides a simple API to create trees from [adjacency lists](https://en.wikipedia.org/wiki/Adjacency_list).
 Specifically, given an array of JSON objects with ids and pointers to their parent ids, we can construct a tree
