@@ -1,15 +1,15 @@
 {
   "name": "@ima-worldhealth/tree",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Build a tree from an adjacency list and operate on it",
   "main": "index.js",
   "scripts": {
     "prepublishOnly": "yarn test",
     "test": "./node_modules/.bin/eslint index.js && nyc ava",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "release" : "release-it --disable-metrics --github.release --npm.publish"
+    "release": "release-it --disable-metrics --github.release --npm.publish"
   },
-  "publishConfig" : {
+  "publishConfig": {
     "access": "public"
   },
   "keywords": [
