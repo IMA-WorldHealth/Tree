@@ -1,5 +1,5 @@
-import test from 'ava';
-import Tree from '..';
+const test = require('ava');
+const Tree = require('..');
 
 /**
  *  This tree looks like this:
@@ -104,7 +104,7 @@ test('#constructor() tree should have a maximum depth of 3', t => {
   t.true(max === 3);
 });
 
-test('#walk () should be able to compute the balances of nodes', t => {
+test('#walk() should be able to compute the balances of nodes', t => {
   const node1 = tree.find(1);
   const node4 = tree.find(4);
   const node6 = tree.find(6);

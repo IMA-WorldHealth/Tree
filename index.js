@@ -125,9 +125,11 @@ class Tree {
     debug('#walk() called on tree structure.');
     const callFnAfterRecurse = !callFnBeforeRecurse;
 
-    const recurse = () =>
-      currentNode.children.forEach(childNode =>
-        this.walk(fn, callFnBeforeRecurse, childNode, currentNode));
+    const recurse = () => {
+      currentNode.children.forEach(childNode => {
+        this.walk(fn, callFnBeforeRecurse, childNode, currentNode);
+      });
+    };
 
     // if we start as the root node, then descend immediately.
     if (this.isRootNode(currentNode)) {
@@ -205,11 +207,9 @@ Tree.common = {
     currentNode.depth = (parentNode.depth || 0) + 1;
   },
 
-  sumOnProperty : (property, defaultValue = 0) =>
-    (currentNode, parentNode) => {
-      parentNode[property] =
-        (parentNode[property] || defaultValue) + currentNode[property];
-    },
+  sumOnProperty : (property, defaultValue = 0) => (currentNode, parentNode) => {
+    parentNode[property] = (parentNode[property] || defaultValue) + currentNode[property];
+  },
 };
 
 module.exports = Tree;
