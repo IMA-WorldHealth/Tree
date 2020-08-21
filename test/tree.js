@@ -104,6 +104,19 @@ test('#constructor() tree should have a maximum depth of 3', t => {
   t.true(max === 3);
 });
 
+test('#prune() should remove nodes based on pruning function', t => {
+  const beforeArray = tree.toArray();
+  t.is(beforeArray.length, 7);
+
+  // prune nodes where valueA is odd
+  const afterArray = tree.prune((node) => (node.valueA % 2 === 1));
+  t.is(afterArray.length, 6);
+
+  // confirm that the missing node is node w/ id 5
+  const afterIds = afterArray.map(node => node.id);
+  t.false(afterIds.includes(5));
+});
+
 test('#walk() should be able to compute the balances of nodes', t => {
   const node1 = tree.find(1);
   const node4 = tree.find(4);
@@ -114,24 +127,24 @@ test('#walk() should be able to compute the balances of nodes', t => {
   t.true(isUndef(node1.valueB));
 
   // this is a level 1 leaf node, so its values are known.
-  t.true(node4.valueA === 30);
-  t.true(node4.valueB === 4);
+  t.is(node4.valueA, 30);
+  t.is(node4.valueB, 4);
 
   tree.walk(Tree.common.sumOnProperty('valueA'), false);
 
-  t.true(node1.valueA === 9);
+  t.is(node1.valueA, 9);
   t.true(isUndef(node1.valueB));
 
-  t.true(node4.valueA === 30);
-  t.true(node4.valueB === 4);
+  t.is(node4.valueA, 30);
+  t.is(node4.valueB, 4);
 
   // this condition sums multiple leaves
   tree.walk(Tree.common.sumOnProperty('valueB'), false);
-  t.true(node1.valueB === 7);
+  t.is(node1.valueB, 7);
 
-  t.true(node4.valueA === 30);
-  t.true(node4.valueB === 4);
+  t.is(node4.valueA, 30);
+  t.is(node4.valueB, 4);
 
-  t.true(node6.valueA === 20);
-  t.true(node6.valueB === 21);
+  t.is(node6.valueA, 20);
+  t.is(node6.valueB, 21);
 });
