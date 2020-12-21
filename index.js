@@ -73,6 +73,12 @@ class Tree {
     return pruned;
   }
 
+  size() {
+    let size = 0;
+    this.walk(() => size++);
+    return size;
+  }
+
   toArray() {
     const array = [];
     this.walk((node) => array.push(node));

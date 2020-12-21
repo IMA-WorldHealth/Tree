@@ -117,6 +117,10 @@ test('#prune() should remove nodes based on pruning function', t => {
   t.false(afterIds.includes(5));
 });
 
+test('#size() should return the correct size of the tree', t => {
+  t.is(tree.size(), 7);
+});
+
 test('#walk() should be able to compute the balances of nodes', t => {
   const node1 = tree.find(1);
   const node4 = tree.find(4);
