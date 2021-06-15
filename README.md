@@ -1,6 +1,7 @@
 # Tree
 
-[![Build Status](https://travis-ci.org/IMA-WorldHealth/Tree.svg?branch=master)](https://travis-ci.org/IMA-WorldHealth/Tree)
+
+[![Build Status](https://builds.bhi.ma/job/Tree/job/master/badge/icon)](https://builds.bhi.ma/job/Tree/)
 [![Coverage Status](https://coveralls.io/repos/github/IMA-WorldHealth/Tree/badge.svg?branch=master)](https://coveralls.io/github/IMA-WorldHealth/Tree?branch=master)
 
 This module provides a simple API to create trees from [adjacency lists](https://en.wikipedia.org/wiki/Adjacency_list).
