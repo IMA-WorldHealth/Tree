@@ -1,6 +1,6 @@
 {
   "name": "@ima-worldhealth/tree",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "Build a tree from an adjacency list and operate on it",
   "main": "index.js",
   "scripts": {
