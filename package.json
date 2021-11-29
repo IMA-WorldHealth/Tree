@@ -7,7 +7,7 @@
     "prepublishOnly": "yarn test",
     "test": "./node_modules/.bin/eslint index.js && nyc ava",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "release": "release-it --disable-metrics --github.release"
+    "release": "release-it --disable-metrics --github.release --no-git.requireUpstream"
   },
   "publishConfig": {
     "access": "public"
