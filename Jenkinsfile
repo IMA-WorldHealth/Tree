@@ -13,7 +13,7 @@ pipeline {
       steps {
         sh 'yarn --version'
         sh 'git log --reverse -1'
-        sh 'yarn'
+        sh 'yarn --ignore-engines'
       }
     }
     stage('test') {
