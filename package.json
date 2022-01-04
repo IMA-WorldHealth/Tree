@@ -9,6 +9,11 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "release": "release-it --disable-metrics --github.release --no-git.requireUpstream"
   },
+  "release-it" : {
+    "hooks" :{
+      "before:init": "yarn test"
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
