@@ -1,25 +1,40 @@
 #!/usr/bin/env groovy
+
 pipeline {
   agent any
-  tools {nodejs "latest"}
+
+  tools {
+    nodejs "latest"
+  }
+
   stages {
-    stage('preflight') {
+    stage('Preflight') {
       steps {
-        echo sh(returnStdout: true, script: 'env')
-        sh 'node -v'
+        script {
+          echo "Running on ${env.NODE_NAME}"
+          sh 'node -v'
+        }
       }
     }
-    stage('build') {
+
+    stage('Build') {
       steps {
         sh 'yarn --version'
-        sh 'git log --reverse -1'
-        sh 'yarn --ignore-engines'
+        sh 'git rev-parse --short HEAD'
+        sh 'yarn install --frozen-lockfile --ignore-engines'
       }
     }
-    stage('test') {
+
+    stage('Test') {
       steps {
         sh 'yarn test'
       }
+    }
+  }
+
+  post {
+    always {
+      deleteDir() // Clean up workspace
     }
   }
 }
